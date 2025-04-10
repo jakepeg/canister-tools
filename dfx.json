@@ -2,6 +2,9 @@
   "canisters": {
     "canister-tools-backend": {
       "candid": "src/canister-tools-backend/canister-tools-backend.did",
+      "declarations": {
+        "node_compatibility": true
+      },
       "package": "canister-tools-backend",
       "type": "rust"
     },
