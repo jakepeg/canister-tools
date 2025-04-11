@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react";
-import { Principal } from "@dfinity/principal";
+// import { Principal } from "@dfinity/principal";
 import { useIdentity, useAgent } from "@nfid/identitykit/react";
 import Header from "./header";
 import Sidebar from "./sidebar";
@@ -9,10 +9,10 @@ import CanisterGrid from "./canister-grid";
 import Footer from "./footer";
 import { CanisterManagementService, type CanisterMonitoringData } from "@/lib/services/canisterManagement";
 // Import backend actor factory, actor type and CanisterInfo type from generated declarations
-import { createActor } from "declarations/canister-tools-backend"; // Use the factory
+import { createActor } from "../../../../declarations/canister-tools-backend"; // Use the factory
 import type { _SERVICE as BackendService, CanisterInfo } from "declarations/canister-tools-backend"; // Import types
 import type { Canister } from "@/lib/types"; // Import the target Canister type for the grid
-import { formatBytes } from "@/lib/utils"; // Assuming a utility function exists for formatting bytes
+// import { formatBytes } from "@/lib/utils"; // Assuming a utility function exists for formatting bytes
 
 // Define a combined type for the fetched data
 interface FetchedCanisterData extends CanisterInfo {

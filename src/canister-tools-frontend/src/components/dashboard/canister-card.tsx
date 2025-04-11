@@ -2,7 +2,7 @@
 
 import { MoreVertical } from "lucide-react"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import type { Canister } from "@/types"
+import type { Canister } from "@/lib/types"
 
 interface CanisterCardProps {
   canister: Canister
