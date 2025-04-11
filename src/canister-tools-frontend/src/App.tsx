@@ -1,29 +1,12 @@
 import { useState } from 'react';
 import { canister_tools_backend } from '../../declarations/canister-tools-backend';
+import CanisterDashboard from "@/components/dashboard/canister-dashboard"
 
 function App() {
-  const [greeting, setGreeting] = useState('');
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    canister_tools_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
 
   return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
+    <main className="min-h-screen bg-[#121212]">
+      <CanisterDashboard />
     </main>
   );
 }

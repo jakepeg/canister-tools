@@ -1,0 +1,35 @@
+import type { Canister } from "@/lib/types"
+
+interface MockData {
+  canisters: Canister[]
+  usagePercentage: number
+}
+
+const mockData: MockData = {
+  canisters: [
+    {
+      id: "ID: rrkah-fqaaa-aaaaa-aaaaq-cai",
+      status: "active",
+      memoryUsage: 65,
+      size: "100.5 / 200 MB",
+      name: "My App UI",
+    },
+    {
+      id: "ID: rrkah-fqaaa-aaaaa-aaaaq-cai",
+      status: "active",
+      memoryUsage: 45,
+      size: "90.5 / 200 MB",
+      name: "My App Client",
+    },
+    {
+      id: "ID: rrkah-fqaaa-aaaaa-aaaaq-cai",
+      status: "inactive",
+      memoryUsage: 80,
+      size: "150.5 / 200 MB",
+      name: "Another App",
+    },
+  ],
+  usagePercentage: 50,
+}
+
+export default mockData
