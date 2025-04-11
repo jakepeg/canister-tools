@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { canister_tools_backend } from 'declarations/canister-tools-backend';
+import { canister_tools_backend } from '../../declarations/canister-tools-backend';
 
 function App() {
   const [greeting, setGreeting] = useState('');
