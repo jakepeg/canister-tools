@@ -10,7 +10,7 @@ import Footer from "./footer";
 import { CanisterManagementService, type CanisterMonitoringData } from "@/lib/services/canisterManagement";
 // Import backend actor factory, actor type and CanisterInfo type from generated declarations
 import { createActor } from "../../../../declarations/canister-tools-backend"; // Use the factory
-import type { CanisterInfo } from "../../../../declarations/canister-tools-backend"; // Import types
+import type { CanisterInfo } from "../../../../declarations/canister-tools-backend/canister-tools-backend.did"; // Import types
 import type { Canister } from "@/lib/types"; // Import the target Canister type for the grid
 import type { ActorType } from "@/lib/shared/actor";
 

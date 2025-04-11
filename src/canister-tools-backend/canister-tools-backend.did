@@ -1,3 +1,32 @@
+type CanisterName = text;
+type CanisterInfo = record {
+    id : principal;
+    name : CanisterName;
+};
+
+type RegisterResult = variant {
+    Ok : null;
+    Err : text;
+};
+
+type SupportedStandard = record {
+    url : text;
+    name : text;
+};
+
+type Icrc28TrustedOriginsResponse = record {
+    trusted_origins : vec text;
+};
+
 service : {
-    "greet": (text) -> (text) query;
-}
+    // Original greet method
+    "greet" : (text) -> (text) query;
+
+    // Canister registration methods
+    "register_canister" : (principal, CanisterName) -> (RegisterResult);
+    "get_user_canisters" : () -> (vec CanisterInfo) query;
+
+    // ICRC methods
+    "icrc10_supported_standards" : () -> (vec SupportedStandard) query;
+    "icrc28_trusted_origins" : () -> (Icrc28TrustedOriginsResponse);
+};
