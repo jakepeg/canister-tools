@@ -112,8 +112,8 @@ export default function CanisterDashboard() {
             const memoryUsageMB = Number(memoryBytes / (1024n * 1024n));
 
             return {
-              id: data.id.toText(),
-              name: "PlaceHolderName",
+              id: data.id.toText(), // Assumes CanisterInfo has 'id' (Principal)
+              name: data.name,      // Assumes CanisterInfo has 'name' (string)
               status: monitoring.status === 'running' ? 'active' : 'inactive',
               memoryUsage: memoryUsageMB, // Use memory in MB as the number value
               size: formatBytes(memoryBytes), // Format bytes to string (e.g., "1.5 GB")

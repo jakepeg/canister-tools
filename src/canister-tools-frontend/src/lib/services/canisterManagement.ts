@@ -2,7 +2,7 @@ import { Principal } from '@dfinity/principal';
 import { Identity } from '@dfinity/agent'; // Import Identity and createAgent
 import {
 	ICManagementCanister,
-	// type canister_status_result, // Correct type import
+	type canister_status_result, // Correct type import
 } from '@dfinity/ic-management';
 import { createAgent } from '@dfinity/utils'; // Use createAgent helper
 
