@@ -10,9 +10,9 @@ import Footer from "./footer";
 import { CanisterManagementService, type CanisterMonitoringData } from "@/lib/services/canisterManagement";
 // Import backend actor factory, actor type and CanisterInfo type from generated declarations
 import { createActor } from "../../../../declarations/canister-tools-backend"; // Use the factory
-import type { _SERVICE as BackendService, CanisterInfo } from "declarations/canister-tools-backend"; // Import types
+import type { CanisterInfo } from "../../../../declarations/canister-tools-backend"; // Import types
 import type { Canister } from "@/lib/types"; // Import the target Canister type for the grid
-// import { formatBytes } from "@/lib/utils"; // Assuming a utility function exists for formatting bytes
+import type { ActorType } from "@/lib/shared/actor";
 
 // Define a combined type for the fetched data
 interface FetchedCanisterData extends CanisterInfo {
@@ -67,7 +67,7 @@ export default function CanisterDashboard() {
       try {
         console.log("Creating backend actor...");
         // Use the actor factory from declarations
-        const actor: BackendService = createActor(backendCanisterId, { agent });
+        const actor: ActorType = createActor(backendCanisterId, { agent });
 
         console.log("Fetching user canisters from backend...");
         const userCanisters: CanisterInfo[] = await actor.get_user_canisters();
@@ -113,7 +113,7 @@ export default function CanisterDashboard() {
 
             return {
               id: data.id.toText(),
-              name: data.name,
+              name: "PlaceHolderName",
               status: monitoring.status === 'running' ? 'active' : 'inactive',
               memoryUsage: memoryUsageMB, // Use memory in MB as the number value
               size: formatBytes(memoryBytes), // Format bytes to string (e.g., "1.5 GB")
